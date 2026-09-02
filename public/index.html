@@ -568,7 +568,8 @@ const farms = [
     n: 5, nome: "Fazenda Galheiro", cidade: "Campo Verde",
     razao: "Livio José Andrighetti e Outro",
     telFixo: "(67) 3324-1444", ramal: "8548", telHref: "+556733241444",
-    whats: "(65) 3498-8593", whatsHref: "556534988593",
+    whats: "(66) 3498-8593", whatsHref: "556634988593",
+    portaria: "(65) 99340-7738", portariaHref: "+5565993407738",
     email: "fazendagalheiro@livioeoutro.com.br",
     endereco: "Rod. MT 130, Km 5, mais 55Km à esquerda, Campo Verde - MT, 78840-000",
     maps: "https://www.google.com/maps?q=-15.308328,+-54.597027"
@@ -663,6 +664,14 @@ grid.innerHTML = farms.map(f => `
           <a class="value" href="https://wa.me/${f.whatsHref}" target="_blank" rel="noopener">${f.whats}</a>
         </div>
       </div>
+      ${f.portaria ? `
+      <div class="farm-detail">
+        ${phoneIcon}
+        <div>
+          <div class="label">Telefone da Portaria</div>
+          <a class="value" href="tel:${f.portariaHref}">${f.portaria}</a>
+        </div>
+      </div>` : ''}
       <div class="farm-detail">
         ${mailIcon}
         <div>
